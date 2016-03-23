@@ -243,6 +243,7 @@ from GoogleScraper.database import ScraperSearch, SERP, Link
 def basic_usage():
     # See in the config.cfg file for possible values
     config = {
+        'num_pages_for_keyword': 1,
         'sel_browser': 'chrome',
         'do_caching': False,
         'keyword': 'Let\'s go bubbles!',
