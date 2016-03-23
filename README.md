@@ -245,7 +245,6 @@ def basic_usage():
     config = {
         'SCRAPING': {
             'use_own_ip': 'True',
-            'search_engines': 'yandex',
             'num_pages_for_keyword': 1
         },
         'SELENIUM': {
@@ -255,6 +254,7 @@ def basic_usage():
             'do_caching': 'False',
         },
         'keyword': 'Let\'s go bubbles!',
+        'search_engines': 'bing',
     }
 
     try:
@@ -277,11 +277,11 @@ def image_search():
     # See in the config.cfg file for possible values
     config = {
         'SCRAPING': {
-            'keyword': 'beautiful landscape', # :D hehe have fun my dear friends
-            'search_engines': 'yandex,google,bing,baidu,yahoo', # duckduckgo not supported
             'search_type': 'image',
             'scrapemethod': 'selenium'
-        }
+        },
+        'keyword': 'beautiful landscape', # :D hehe have fun my dear friends
+        'search_engines': 'yandex,google,bing,baidu,yahoo', # duckduckgo not supported
     }
 
     try:
