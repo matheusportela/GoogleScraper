@@ -243,16 +243,8 @@ from GoogleScraper.database import ScraperSearch, SERP, Link
 def basic_usage():
     # See in the config.cfg file for possible values
     config = {
-        'SCRAPING': {
-            'use_own_ip': 'True',
-            'num_pages_for_keyword': 1
-        },
-        'SELENIUM': {
-            'sel_browser': 'chrome',
-        },
-        'GLOBAL': {
-            'do_caching': 'False',
-        },
+        'sel_browser': 'chrome',
+        'do_caching': False,
         'keyword': 'Let\'s go bubbles!',
         'search_engines': 'bing',
     }
@@ -276,10 +268,8 @@ def image_search():
 
     # See in the config.cfg file for possible values
     config = {
-        'SCRAPING': {
-            'search_type': 'image',
-            'scrapemethod': 'selenium'
-        },
+        'search_type': 'image',
+        'scrapemethod': 'selenium',
         'keyword': 'beautiful landscape', # :D hehe have fun my dear friends
         'search_engines': 'yandex,google,bing,baidu,yahoo', # duckduckgo not supported
     }
