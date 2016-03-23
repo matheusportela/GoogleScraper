@@ -32,7 +32,7 @@ Look [here to get an idea how to use asynchronous mode](http://scrapeulous.com/g
 <a name="install" \>
 ## Installation
 
-GoogleScraper is written in Python 3. You should install at least Python 3.4. The last major development was all done with Python3.5. So when using 
+GoogleScraper is written in Python 3. You should install at least Python 3.4. The last major development was all done with Python3.5. So when using
 Ubuntu 15.10 and Python3.5 for instance, please install:
 
 ```
@@ -106,7 +106,7 @@ Scrape all keywords that are in keywords.txt in selenium mode (with real browser
 GoogleScraper -m selenium --keyword-file keywords.txt -v2
 ```
 
-Scrape all keywords that are in 
+Scrape all keywords that are in
 + keywords.txt
 + with http mode
 + using 10 threads
@@ -245,7 +245,6 @@ def basic_usage():
     config = {
         'SCRAPING': {
             'use_own_ip': 'True',
-            'keyword': 'Let\'s go bubbles!',
             'search_engines': 'yandex',
             'num_pages_for_keyword': 1
         },
@@ -253,8 +252,9 @@ def basic_usage():
             'sel_browser': 'chrome',
         },
         'GLOBAL': {
-            'do_caching': 'False'
-        }
+            'do_caching': 'False',
+        },
+        'keyword': 'Let\'s go bubbles!',
     }
 
     try:
@@ -263,12 +263,10 @@ def basic_usage():
         print(e)
 
     # let's inspect what we got
-
-    for search in sqlalchemy_session.query(ScraperSearch).all():
-        for serp in search.serps:
-            print(serp)
-            for link in serp.links:
-                print(link)
+    for serp in sqlalchemy_session.serps:
+        print(serp)
+        for link in serp.links:
+            print(link)
 
 
 # simulating a image search for all search engines that support image search
